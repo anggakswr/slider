@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <style>
+        .container {
+            margin: 20px auto;
+            background-color: grey;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .container2 {
+            width: 300%;
+            display: flex;
+            transition: .3s;
+        }
+
+        .div1,
+        .div2,
+        .div3 {
+            width: 400px;
+            height: 400px;
+        }
+
+        .div1 {
+            background-color: red;
+        }
+
+        .div2 {
+            background-color: yellow;
+        }
+
+        .div3 {
+            background-color: lime;
+        }
+
+        #input1:checked~.container .container2 {
+            transform: translateX(0);
+        }
+
+        #input2:checked~.container .container2 {
+            transform: translateX(-33.33%);
+        }
+
+        #input3:checked~.container .container2 {
+            transform: translateX(-66.66%);
+        }
+
+        label {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- harus punya name spy yg checked cm 1 -->
+    <label for="input1"></label>
+    <label for="input2"></label>
+    <label for="input3"></label>
+    <input type="radio" id="input1" name="r">
+    <input type="radio" id="input2" name="r">
+    <input type="radio" id="input3" name="r">
+    <div class="container">
+        <div class="container2">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+        </div>
+    </div>
+
+    <script>
+        const radio2 = document.getElementsByTagName('input')[1];
+        // console.log(radio2);
+        if (radio2.checked) {
+            console.log('uhuy');
+        }
+    </script>
+</body>
+
+</html>
